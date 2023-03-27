@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './category_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -13,29 +15,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'IndiFood',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.blue,
+          accentColor: Colors.green,
+        ),
+        fontFamily: 'Raleway',
+        textTheme: ThemeData.light().textTheme.copyWith(
+          bodySmall: TextStyle(color:Color.fromRGBO(20, 51, 51, 1)),
+          bodyLarge: TextStyle(color:Color.fromRGBO(20, 51, 51, 1)),
+          titleSmall: TextStyle(
+            fontSize: 20,
+            fontFamily: 'RobotoCondensed',
+            fontWeight: FontWeight.bold,
+          )
+        )
       ),
-      home: const MyHomePage(),
+      home: CategoryScreen(),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: const Text("IndiFoods"),
-      ),
-      body:const Text("IndiFoods"), 
-      ); // This trailing comma makes auto-formatting nicer for build methods.
   }
 }

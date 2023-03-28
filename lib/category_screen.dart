@@ -7,6 +7,7 @@ class CategoryScreen extends StatelessWidget {
   final gridView=GridView(
     padding: EdgeInsets.all(15),
       children: DUMMY_CATEGORIES.map((catData) => CategoryItem(
+        id: catData.id,
         title: catData.title,
         color: catData.color,
       )).toList(),

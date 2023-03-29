@@ -4,7 +4,7 @@ import '../widgets/category_item.dart';
 import '../dummy_data.dart';
 
 class CategoryScreen extends StatelessWidget {
-  final gridView=GridView(
+  Widget gridView=GridView(
     padding: EdgeInsets.all(15),
       children: DUMMY_CATEGORIES.map((catData) => CategoryItem(
         id: catData.id,
@@ -20,9 +20,6 @@ class CategoryScreen extends StatelessWidget {
     );
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("IndiFood")),
-      body: gridView,
-      );
+    return gridView;
   }
 }

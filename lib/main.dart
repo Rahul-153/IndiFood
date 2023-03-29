@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './screens/filters_screen.dart';
+import './screens/tabs_screen.dart';
 import './screens/meals_detail_screen.dart';
 import './screens/category_meals_screen.dart';
 import './screens/category_screen.dart';
@@ -17,23 +19,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'IndiFood',
       theme: ThemeData(
-        colorScheme: ThemeData().colorScheme.copyWith(primary:Colors.pink,secondary: Colors.amber),
-        fontFamily: 'Raleway',
-        textTheme: ThemeData.light().textTheme.copyWith(
-          bodySmall: TextStyle(color:Color.fromRGBO(20, 51, 51, 1)),
-          bodyLarge: TextStyle(color:Color.fromRGBO(20, 51, 51, 1)),
-          titleSmall: TextStyle(
-            fontSize: 20,
-            fontFamily: 'RobotoCondensed',
-            fontWeight: FontWeight.bold,
-          )
-        )
-      ),
+          colorScheme: ThemeData()
+              .colorScheme
+              .copyWith(primary: Colors.pink, secondary: Colors.amber),
+          fontFamily: 'Raleway',
+          textTheme: ThemeData.light().textTheme.copyWith(
+              bodySmall: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+              bodyLarge: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+              titleSmall: TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.bold,
+              ))),
       initialRoute: '/',
       routes: {
-        '/':(context)=>CategoryScreen(),
-        '/category-meals':(context)=>CategoryMealsScreen(),
-        '/meals-detail':(context)=>MealsDetailScreen(),
+        '/': (context) => TabsScreen(),
+        '/category-meals': (context) => CategoryMealsScreen(),
+        '/meals-detail': (context) => MealsDetailScreen(),
+        '/filters': (context) => FiltersScreen(),
       },
     );
   }
